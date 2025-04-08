@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 const Product = () => {
     const [productData, setProductData] = React.useState({})
     const {id} = useParams()
-    const link = `http://localhost:8080/getProduct/${id}` 
+    const link = `https://arthobby-backend.ddns.net/getProduct/${id}` 
 
     React.useEffect(() => {
         async function fetchDataProduct() {

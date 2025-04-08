@@ -18,26 +18,36 @@ export default function Items() {
     size: "50 см",
   };
 
+  React.useEffect(() => {
+    fetch("https://arthobby-backend.ddns.net/getPopularProducts")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setNewItems(json);
+        console.log(json);
+      });
+  }, []);
+
   // React.useEffect(() => {
-  //   fetch("http://localhost:8080/filterByDate")
+  //   fetch("https://arthobby-backend.ddns.net/filterByDate")
   //     .then((res) => {
   //       return res.json();
   //     })
   //     .then((json) => {
   //       setNewItems(json);
   //     });
-
-  //   async function saveData() {
-  //     await fetch("http://localhost:8080/saveProduct", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(obj),
-  //     });
-  //   }
-
-  //   // saveData()
+  //
+  // 		async function saveData() {
+  // 			await fetch("https://arthobby-backend.ddns.net/saveProduct", {
+  // 				method: "POST",
+  // 				headers: {
+  // 					"Content-Type": "application/json",
+  // 				},
+  // 				body: JSON.stringify(obj),
+  // 			});
+  // 		}
+  //    // saveData()
   // }, []);
 
   return (

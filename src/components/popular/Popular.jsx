@@ -7,15 +7,16 @@ export default function Cards() {
   const { onAddToCart, showProduct } = React.useContext(CartContext);
   const [products, setProducts] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   fetch("http://localhost:8080/getAllProducts")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((json) => {
-  //       setProducts(json);
-  //     });
-  // }, []);
+  React.useEffect(() => {
+    fetch("https://arthobby-backend.ddns.net/getPopularProducts")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setProducts(json);
+				console.log(json)
+      });
+  }, []);
 
   return (
     <div className="popular">
