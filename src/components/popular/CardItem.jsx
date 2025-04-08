@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import addCartIcon from '../../icons/addCart.svg'
 
-const CardItem = ({ img, alt, title, price, ratting, onPlus, onProduct }) => {
+const CardItem = ({ id, img, alt, title, price, ratting, onPlus, onProduct }) => {
     const [isAdded, setIsAdded] = React.useState(false);
     const [isLike, setIsLike] = React.useState(false);
 
@@ -20,7 +20,7 @@ const CardItem = ({ img, alt, title, price, ratting, onPlus, onProduct }) => {
     }
 
     return(
-            <Link to="product" className="slide"
+            <Link to={`/product/${id}`} className="slide"
             onClick={onClickProduct}>
                 <div className="item-header">
                     <div className="col">

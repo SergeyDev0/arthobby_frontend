@@ -58,8 +58,9 @@ export default function Items() {
           if (index < 10) {
             return (
               <Item
+								key={item.id}
                 id={item.id}
-                img={item.fileName}
+                img={item.filename}
                 alt={item.name}
                 title={item.name}
                 price={item.price}

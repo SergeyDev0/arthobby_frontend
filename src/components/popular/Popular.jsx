@@ -25,8 +25,9 @@ export default function Cards() {
         {products?.map((product, index) => {
           return (
             <CardItem
-              key={index}
-              img={product.fileName}
+              key={product.id}
+							id={product.id}
+              img={product.filename}
               alt={product.name}
               title={product.name}
               price={product.price}

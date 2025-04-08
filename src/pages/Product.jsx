@@ -15,6 +15,7 @@ const Product = () => {
             const response = await fetch(link);
             const json = await response.json();
             setProductData(json)
+						console.log(json)
         }
         fetchDataProduct()
     }, [])
